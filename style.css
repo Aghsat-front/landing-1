@@ -12,6 +12,32 @@ body {
   ul {
     list-style-type: none;
   }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+  }
+  header nav ul {
+    display: flex;
+     align-content: center;
+     gap: 15px;
+  }
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3158BD;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  header nav ul li .contact-us-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   
   .main-banner {
     position: relative;
@@ -72,6 +98,20 @@ body {
     color: #CCA34C;
     margin-left: 5px;
   }
+  footer {
+    background-color: #102E62;
+    padding: 40px 60px;
+  }
+  footer img {
+    width: 200px;
+  }
+  footer .copy-right {
+    color: #c7c7c7;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #747474;
+  }
   
   @media screen and (max-width: 1200px) {
     .main-banner {
@@ -104,11 +144,12 @@ body {
       flex-direction: column;
       height: auto;
       padding-bottom: 160px;
+
     }
     .main-banner .banner-content {
       width: 100%;
       height: 400px;
-      margin-top: 80px;
+      margin-top: 0;
       padding-top: 40px;
       justify-content: flex-start;
       background-size: 780px 100%;
@@ -131,7 +172,7 @@ body {
       height: 300px;
       max-width: 450px;
       left: 50%;
-      top: 360px;
+      top: 280px;
       transform: translateX(-50%);
     }
     .main-banner .sofa-img .isolation-mode {
@@ -140,13 +181,30 @@ body {
     }
   }
   @media screen and (max-width: 600px) {
+    header {
+      padding: 20px;
+    }
+    header>img {
+      width: 100px;
+    }
+    header nav ul {
+      align-items: flex-start;
+    }
+    header nav ul li a {
+      padding: 0;
+      background-color: transparent;
+      color: #3158BD;
+    }
+    header nav ul li a img {
+      display: none;
+    }
     .main-banner {
       padding-bottom: 40px;
     }
     .main-banner .banner-content {
-      margin-top: 130px;
       padding-top: 20px;
-      height: 600px;
+      padding-right: 30px;
+      height: 550px;
       background-size: 780px 100%;
     }
     .main-banner .banner-content .banner-title {
@@ -157,23 +215,34 @@ body {
       line-height: 25px;
     }
     .main-banner .sofa-img {
-      top: 500px;
+      top: 370px;
+      width: 350px;
     }
   }
   @media screen and (max-width: 400px) {
     .main-banner .banner-content .banner-title {
-      font-size: 24px;
+      font-size: 22px;
       line-height: 30px;
     }
+    .main-banner .banner-content .banner-title .tashilat>p {
+      font-size: 18px;
+    }
     .main-banner .banner-content .banner-title>p {
-      font-size: 20px;
+      font-size: 18px;
+    }
+    .main-banner .banner-content .banner-description {
+      font-size: 14px;
     }
     .main-banner .sofa-img {
-      top: 550px;
+      top: 360px;
+      width: 300px;
     }
     .main-banner .sofa-img .isolation-mode {
       width: 60px;
       top: -20px;
+    }
+    footer {
+      padding: 40px 20px;
     }
   }
 
@@ -191,19 +260,23 @@ body {
     margin-bottom: 20px;
   }
   .stores-lists-container .stores-top {
-    padding-right: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 80px;
     margin-bottom: 40px;
   }
   .stores-lists-container .stores-bottom {
-    padding-left: 80px;
+    padding: 0 80px;
   }
-  .stores-lists-container ul .numbers {
+  .stores-lists-container ul {
     display: flex;
-    align-items: center;
-    gap: 2px;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   .stores-lists-container ul li {
     display: flex;
+    width: 400px;
     margin-bottom: 40px;
   }
   .stores-lists-container ul li .store-title {
@@ -227,17 +300,26 @@ body {
   .stores-lists-container .stores-top,.stores-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
   .stores-lists-container .counter-image-container {
     background-image: url("./assets/images/rectangle-right.png");
+    background-repeat: no-repeat;
     padding: 20px;
     border-radius: 20px;
+    width: 40%;
+    max-width: 600px;
+    min-width: 500px;
   }
   .stores-lists-container .stores-top .counter-image-container {
     padding-left: 0;
   }
   .stores-lists-container .stores-bottom .counter-image-container {
     padding-right: 0;
+  }
+  .stores-lists-container .counter-image-container img {
+    width: 100%;
+    height: 370px;
   }
 
 
@@ -248,17 +330,13 @@ body {
     }
     .stores-lists-container .stores-bottom {
       flex-direction: column-reverse;
-      padding-left: 0;
-      padding-right: 80px;
-    }
-    .stores-lists-container ul {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 40px;
     }
   }
 
   @media screen and (max-width: 768px) {
+    .stores-lists-container ul {
+      padding: 0 40px;
+    }
     .stores-lists-container ul li {
       width: 100%;
     }
@@ -268,27 +346,39 @@ body {
     .stores-lists-container ul li .store-title {
       width: 100%;
     }
-    .stores-lists-container .stores-top {
-      padding-right: 0px;
-    }
+    
     .stores-lists-container .stores-bottom {
-      padding-right: 0px;
+      padding: 0px;
     }
     .stores-lists-container .counter-image-container {
       width: 80%;
+      height: 300px;
+      min-width: 400px;
     }
     .stores-lists-container .counter-image-container img {
       width: 100%;
+      height: 100%;
     }
   }
 
   @media screen and (max-width: 600px) {
+    .stores-lists-container .list-header {
+      padding-right: 10px;
+    }
     .list-header img {
       width: 30px;
     }
     .list-header h1 {
       font-size: 20px;
       padding-left: 10px;
+    }
+    .stores-lists-container .stores-top {
+      padding: 0 ;
+    }
+    .stores-lists-container .counter-image-container {
+      width: 80%;
+      height: 300px;
+      min-width: 300px;
     }
   }  
 
@@ -395,7 +485,7 @@ body {
   }
  
   
-  @font-face {
+@font-face {
     font-family: "IranSansX";
     src: url("./assets/fonts/woff/IRANSansXFaNum-Regular.woff") format("woff"),
          url("./assets/fonts/woff2/IRANSansXFaNum-Regular.woff2") format("woff2");
